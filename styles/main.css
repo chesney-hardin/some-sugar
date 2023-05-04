@@ -1,10 +1,13 @@
-.main-container{
-    border: 5px dotted red;
+
+#main-container {
+    color: rgba(255, 255, 255, 0.867);
+    text-shadow: 2px 2px 2px black;
+
 }
 
 .bookings {
-    border: 5px dotted orange;
     padding: 20px;
+    background-color: blueviolet;
 }
 
 .bookings__list {
@@ -12,17 +15,16 @@
 }
 
 .venues-bands {
-    border: 10px dotted blue;
     display: flex;
     justify-content: space-evenly;
 }
 
 .venues {
-    border: 5px dotted green;
     padding: 20px;
+    background-color: rgba(0, 255, 255, 0.367);
 }
 
 .bands {
-    border: 5px dotted purple;
     padding: 20px;
+    background-color: darkslategrey;
 }
