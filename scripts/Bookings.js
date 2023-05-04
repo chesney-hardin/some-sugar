@@ -36,7 +36,11 @@ export const BookingsList = () => {
             }
         }
 
-        bookingsHTML += `<li>
+        bookingsHTML += `<li
+                    data-id="${booking.id}"
+                    data-bandid="${booking.bandId}"
+                    data-type="booking"
+                    >
                     ${bandName} are playing at ${venueName} on ${booking.date}
                     </li>`
     }
@@ -50,3 +54,47 @@ export const BookingsList = () => {
 
 
 //add an event listener that triggers a window alert when a booking is clicked
+//display all the band info (name, genre, year formed, number of members)
+document.addEventListener (
+    "click",
+    (clickEvent) => {
+        const whatClicked = clickEvent.target
+
+        //was a booking list item clicked on?
+        if(whatClicked.dataset.type === "booking") {
+
+            //get the bandId of booking clicked on
+            const bandId = parseInt(whatClicked.dataset.bandid)
+
+            //create a base object for the band info
+            let baseBand = {
+                name: "name",
+                genre: "genre",
+                yearFormed: 0,
+                members: 0
+            }
+
+            //iterate through bands array to find the object with matching id
+            for (const band of bands) {
+
+                if(bandId === band.id) {
+                    baseBand.name = band.name
+                    baseBand.genre = band.genre
+                    baseBand.yearFormed = `Formed in ${band.yearFormed}`
+                    baseBand.members = `${band.members} band members`
+                }
+                
+            }
+
+            window.alert(`${baseBand.name}\n${baseBand.genre}\n${baseBand.yearFormed}\n${baseBand.members}`)
+
+
+        }
+
+
+
+
+
+
+    }
+)
