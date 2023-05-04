@@ -1,0 +1,28 @@
+.main-container{
+    border: 5px dotted red;
+}
+
+.bookings {
+    border: 5px dotted orange;
+    padding: 20px;
+}
+
+.bookings__list {
+    list-style-type: none;
+}
+
+.venues-bands {
+    border: 10px dotted blue;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.venues {
+    border: 5px dotted green;
+    padding: 20px;
+}
+
+.bands {
+    border: 5px dotted purple;
+    padding: 20px;
+}
